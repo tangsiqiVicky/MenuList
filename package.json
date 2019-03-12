@@ -1,0 +1,42 @@
+{
+  "name": "wonder-materials-menu-list",
+  "version": "1.0.0",
+  "description": "菜单区块",
+  "author": "tangsiqiVicky <tsq282549373@163.com>",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "react",
+    "block"
+  ],
+  "scripts": {
+    "start": "ice-devtools start",
+    "build": "ice-devtools build",
+    "screenshot": "ice-devtools screenshot",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  },
+  "blockConfig": {
+    "name": "wonder-materials-menu-list",
+    "title": "MenuList",
+    "categories": [
+      "列表",
+      "信息展示"
+    ],
+    "screenshot": "https://unpkg.com/@icedesign/wonder-materials-menu-list/screenshot.png"
+  }
+}

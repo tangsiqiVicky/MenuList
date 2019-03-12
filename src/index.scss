@@ -1,0 +1,78 @@
+/* write style here */
+$bg-color: #eee;
+$common-wd: 15px;
+
+@mixin flex($justify-content: center, $align-items: center) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+@mixin wh($width, $height){
+  width: $width;
+  height: $height;
+}
+@mixin font($font-size, $color:#333,$text-align:left) {
+  font-size: $font-size;
+  color: $color;
+  text-align: $text-align;
+}
+@mixin positionLeft($position:absolute, $left:$common-wd){
+  position: $position;
+  top: 50%;
+  left: $left;
+  transform: translate3d(0, -50%, 0);
+}
+@mixin positionRight($position: absolute, $right: $common-wd){
+  position: $position;
+  top: 50%;
+  right: $right;
+  transform: translate3d(0, -50%, 0);
+}
+@mixin positionCenter($position: absolute) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.menu-list {
+  @include wh(100%,100vh);
+  @include flex;
+  background: $bg-color;
+  padding-top: 80px;
+  .menu-ul{
+    @include wh(100%,100vh);
+    overflow: scroll;
+    .menu-li{
+      @include wh(100%,56px);
+      background: #fff;
+      margin-bottom: 2px;
+      position: relative;
+      .menu-icon{
+        display: inline-block;
+        @include positionLeft;
+        .menu-img{
+          display: inline-block;
+          @include wh(40px,40px);
+          background-color: #666666;
+        }
+      }
+      .menu-detail{
+        @include positionLeft(absolute,70px);
+        span{
+          display: block;
+        }
+        .menu-title{
+          @include font(16px);
+        }
+        .menu-text{
+          @include wh(210px,20px);
+          @include font(12px,#666);
+          line-height: 20px;
+          white-space:nowrap;
+          overflow:hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
